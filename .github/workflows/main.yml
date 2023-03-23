@@ -26,8 +26,7 @@ on:
 jobs:
   my_ci_part:
     runs-on: ubuntu-latest
-    env:
-      VASYA: YA
+    
     steps:
     - name: Git clone our repo
       uses: actions/checkout@v3
