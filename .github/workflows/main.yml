@@ -14,7 +14,7 @@ env:
   DEPLOY_PACKAGE_NAME       : "flask_app_${{ github.sha }}.zip"
   #AWS_REGION_NAME           : "us-east-1"
   AWS_REGION_NAME           : "ap-southeast-1"
-  VASYA: VAS
+#  VASYA: VAS
 
 on: 
   push:
