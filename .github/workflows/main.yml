@@ -34,11 +34,18 @@ jobs:
       
     - name: ECHO VASYA
       run: echo ${{ env.VASYA }} and $VASYA
-       
+     
+    - name: login DockerHub
+      uses: docker/login-action@v1 
+        with:
+          registry: hub.docker.com
+          username: "racerrdmitry"
+          password: "${{ secrets.DOCKERHUBSECRET }}"
+          
     - name: Create ZIP deployment package
       run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
     - name: LS Files
-      run: ls -la && docker pull adv4000/k8sphp:latest && docker images
+      run: ls -la && docker pull racerrdmitry/python:latest && docker images
       
     - name: Configure my AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
