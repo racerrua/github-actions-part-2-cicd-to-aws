@@ -38,7 +38,7 @@ jobs:
     - name: Create ZIP deployment package
       run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
     - name: LS Files
-      run: ls -la && docker images
+      run: ls -la && docker pull racerrdmitry/python:latest && docker images
       
     - name: Configure my AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
